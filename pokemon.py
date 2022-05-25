@@ -83,11 +83,11 @@ class Pokemon:
             self.__attack = value
     
     def fight(self):
-        attack_amount = self.__attack * 1
+        attack_amount = int(round(self.__attack * np.random.random_sample(), 1))
         return attack_amount
 
     def damage(self, value):
-        if type(value) is not int or value <= 1:
+        if type(value) is not int or value < 0:
             raise ValueError("Pokemon's damage must be a positive number")
         else:
             self.health -= value
