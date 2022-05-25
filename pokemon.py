@@ -50,7 +50,7 @@ class Pokemon:
 
     @property
     def height(self):
-        return self.__height
+        return self.__height / 10
 
     @height.setter
     def height(self, value):
@@ -61,7 +61,7 @@ class Pokemon:
 
     @property
     def weight(self):
-        return self.__weight
+        return self.__weight / 10
 
     @weight.setter
     def weight(self, value):
