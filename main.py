@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+import numpy as np
 from Battle_ring import Battle
+import pypokedex as pokedex
 
 
 Pokemon = __import__('pokemon').Pokemon
+A = pokedex.get(dex=np.random.randint(1, 100))
+B = pokedex.get(dex=np.random.randint(1, 100))
 
-Charmander = Pokemon("Charmander", 4, "Fire", 0.6096, 8.482177, 5)
-Corvisquire = Pokemon("Corvisquire", 822, "Flying", 0.8, 16.5, 6)
-Battle(Charmander, Corvisquire)
+Pokemon_A = Pokemon(A.name, A.dex, A.types[0], A.height, A.weight, A.base_stats[0], A.base_stats[1])
+Pokemon_B = Pokemon(B.name, B.dex, B.types[0], B.height, B.weight, B.base_stats[0], B.base_stats[1])
+Battle(Pokemon_A, Pokemon_B)

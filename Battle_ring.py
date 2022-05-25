@@ -6,6 +6,7 @@ Pokemon = __import__('pokemon').Pokemon
 
 def Battle(Pokemon_1, Pokemon_2):
     i = 1
+    print(f"{(Pokemon_1.name).upper()} vs {(Pokemon_2.name).upper()}")
     while(True):
         print(f"---- Round {i} ----")
         sleep(2)

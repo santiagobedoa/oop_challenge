@@ -1,19 +1,18 @@
 #!/usr/bin/python3
 import numpy as np
+import pypokedex as pokedex
 
 
 class Pokemon:
     """represents a Pokemon"""
-
-    health = 15
-
-    def __init__(self, name, number=0, p_type='', height=0, weight=0, attack=0):
+    def __init__(self, name, number=0, p_type='', height=0, weight=0, health=0, attack=0):
         """initialize Pokemon attributes"""
         self.__name = name
         self.__number = number
         self.__p_type = p_type
         self.__height = height
         self.__weight = weight
+        self.health = health
         self.__attack = attack
 
     @property
@@ -80,7 +79,7 @@ class Pokemon:
         if type(value) is not int or value < 1:
             raise ValueError("Pokemon's attack must be a positive number")
         else:
-            self.__attack = value
+            self.__attack = round(value / 32.5, 1)
     
     def fight(self):
         attack_amount = int(round(self.__attack * np.random.random_sample(), 1))
@@ -91,3 +90,5 @@ class Pokemon:
             raise ValueError("Pokemon's damage must be a positive number")
         else:
             self.health -= value
+            if self.health < 0:
+                self.health = 0
