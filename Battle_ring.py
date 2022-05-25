@@ -9,7 +9,7 @@ def Battle(Pokemon_1, Pokemon_2):
     while(True):
         print(f"---- Round {i} ----")
         sleep(2)
-        f_attack = Pokemon_1.fight
+        f_attack = Pokemon_1.fight()
         Pokemon_2.damage(int(f_attack))
         print("{} receives: {}, health remain: {}".format(Pokemon_2.name, f_attack, Pokemon_2.health))
         sleep(2)
@@ -19,7 +19,7 @@ def Battle(Pokemon_1, Pokemon_2):
             sleep(2)
             break
 
-        f_attack = Pokemon_2.fight
+        f_attack = Pokemon_2.fight()
         Pokemon_1.damage(int(f_attack))
         print("{} receives: {}, health remain: {}".format(Pokemon_1.name, f_attack, Pokemon_1.health))
         sleep(2)
