@@ -7,8 +7,8 @@ class Pokemon:
 
     health = 15
 
-    def __init__(self, name, number, p_type, height, weight, attack):
-        """initialize Pockemon attributes"""
+    def __init__(self, name, number=0, p_type='', height=0, weight=0, attack=0):
+        """initialize Pokemon attributes"""
         self.__name = name
         self.__number = number
         self.__p_type = p_type
@@ -23,7 +23,7 @@ class Pokemon:
     @name.setter
     def name(self, value):
         if type(value) is not str:
-            raise TypeError("Pokemo's name must be letters")
+            raise TypeError("Pokemon's name must be letters")
         else:
             self.__name = value
 
@@ -45,7 +45,7 @@ class Pokemon:
     @p_type.setter
     def p_type(self, value):
         if type(value) is not str:
-            raise TypeError("Pokemo's type must be letters")
+            raise TypeError("Pokemon's type must be letters")
         else:
             self.__p_type = value
 
@@ -84,7 +84,7 @@ class Pokemon:
     
     def fight(self):
         attack_amount = self.__attack * (round(np.random(0, 1)))
-        return attack_amount
+        return int(attack_amount)
 
     def damage(self, value):
         if type(value) is not int and int(value) <= 1:
