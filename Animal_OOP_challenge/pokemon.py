@@ -80,7 +80,7 @@ class Pokemon:
             raise ValueError("Pokemon's attack must be a positive number")
         else:
             self.__attack = round(value / 32.5, 1)
-    
+
     def fight(self):
         attack_amount = int(round(self.__attack * np.random.random_sample(), 1))
         return attack_amount
